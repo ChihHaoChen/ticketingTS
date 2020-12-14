@@ -28,7 +28,17 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-});
+}, {
+  toJSON: {
+    transform(doc, ret) {
+      ret.id = ret._id;
+      delete ret._id;
+      delete ret.password;
+      delete ret.__v;
+    }
+  }
+}
+);
 
 userSchema.pre('save', async function(done) {
   // Arros function for the middleware is not working, since 'this' will be overwritten as the context of this file, 
