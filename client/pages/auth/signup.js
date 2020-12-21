@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
+import styled from 'styled-components';
+import Outside from '../../assets/outside.svg';
+import CustomButton from '../../components/custom-button/custom-button.component.jsx';
+
+const IconContainer = styled.div`
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 export default () => {
   const [email, setEmail] = useState('');
@@ -43,6 +55,12 @@ export default () => {
       </div>
       {errors}
       <button className="btn btn-primary">Sign Up</button>
+      <IconContainer>
+        <Outside color='green'/>
+      </IconContainer>
+      
+        <CustomButton />
+      
     </form>
   );
 };
