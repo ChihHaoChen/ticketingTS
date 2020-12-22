@@ -13,7 +13,15 @@ LandingPage.getInitialProps = async context => {
   const client = buildClient(context);
   const { data } = await client.get('/api/users/currentuser');
 
+  // return {
+  //   namespacesRequired: ['common'],
+  //   data
+  // };
   return data;
 };
+
+// LandingPage.getInitialProps = async () => ({
+// 	namespacesRequired: ['common'],
+// });
 
 export default LandingPage;

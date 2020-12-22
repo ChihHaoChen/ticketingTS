@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import buildClient from '../api/build-client';
 import Header from '../components/header';
+import { appWithTranslation } from '../utils/i18n';
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
   return (
@@ -22,8 +23,9 @@ AppComponent.getInitialProps = async appContext => {
 
   return {
     pageProps,
-    ...data
+    ...data,
+    //...await AppComponent.getInitialProps(appContext)
   };
 };
 
-export default AppComponent;
+export default appWithTranslation(AppComponent);

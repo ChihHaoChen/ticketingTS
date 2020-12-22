@@ -64,10 +64,10 @@ const StyledButton = styled.button`
 const CustomButton = ({ children, isSNSSignIn, iconType, showpop, ...otherProps }) => (
     <StyledButton {...otherProps}>
       <IconContainer>
-        Test
+        {children}
       </IconContainer>
-      {children}
     </StyledButton>
 );
+
 
 export default CustomButton;
